@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import argparse, sys
+from igraph import *
+from readfile import ReadFile
+
+def main(filename):
+    data = ReadFile(filename)
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", type=str, default='../database/ted_talks.csv',
+                        help="Nome do arquivo.")
+    args = parser.parse_args()
+    filename = args.f
+    main(filename)
