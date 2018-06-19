@@ -6,7 +6,7 @@ How to use
 .. code-block:: shell
 
    $ cd src
-   $ python ted_talks
+   $ python main.py
    
 Authors
 *******
