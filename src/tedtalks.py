@@ -3,6 +3,9 @@
 from readfile import ReadFile
 import datetime
 import time
+from igraph import *
+
+saida = open("saida.txt",'w')
 
 class TedTalks():
     def __init__(self, filename):
@@ -38,7 +41,7 @@ class TedTalks():
         list_ordenado = list(reversed(sorted(self.languages)))
         for i in range(0,len(self.languages)):
             for j in range(0,10):
-                if int(list_ordenado[j]) == int(self.languages)[i]:
+                if int(list_ordenado[j]) == int(self.languages[i]):
                     print  j+1 , "º mais traduzido: " , self.name[i], " e foi traduzido para: " , self.languages[i], " línguas."
 
     def ordenarVisualizacoes(self):
@@ -53,8 +56,17 @@ class TedTalks():
         for i in range(0,len(self.comments)):
             for j in range(0,10):
                 if int(list_ordenado[j]) == int(self.comments[i]):
-                    print  j+1 , "º mais comentado: " , self.name[i], "Ocupação: " , self.speaker_occupation[i] , " e ", self.comments[i], " comentarios e os trabalhos relacionados são: " , self.related_talks[i]
+                    print  j+1 , "º mais comentado: " , self.name[i], " e ", self.comments[i], " comentarios." 
 
     def Tempo(self):
         for i in range(0,len(self.published_date)):
             print time.ctime(int(self.published_date[i]))
+
+    def descobreId(self):
+        for i in range(0,len(self.related_talks)):
+            for j in range(0,len(self.related_talks[i])):
+                saida.write(str(i)+ " " + str(self.related_talks[i][j]['id']))
+                saida.write("\n")
+
+
+        
