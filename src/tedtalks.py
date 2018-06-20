@@ -25,7 +25,6 @@ class TedTalks():
         self.name = None
         self.published_date = None
         self.tags = None
-
         self.__n_nodes = None
         ReadFile(self)
 
@@ -39,7 +38,7 @@ class TedTalks():
         list_ordenado = list(reversed(sorted(self.languages)))
         for i in range(0,len(self.languages)):
             for j in range(0,10):
-                if int(list_ordenado[j]) == int(self.languages[i]):
+                if int(list_ordenado[j]) == int(self.languages)[i]:
                     print  j+1 , "º mais traduzido: " , self.name[i], " e foi traduzido para: " , self.languages[i], " línguas."
 
     def ordenarVisualizacoes(self):
@@ -47,7 +46,6 @@ class TedTalks():
         for i in range(0,len(self.views)):
             for j in range(0,10):
                 if int(list_ordenado[j]) == int(self.views[i]):
-                #if data.ted_talks['comments'][i] == 6404:
                     print  j+1 , "º mais visto: " , self.name[i], " e ", self.views[i], " visualizações"
 
     def ordenarComentarios(self):
@@ -55,18 +53,8 @@ class TedTalks():
         for i in range(0,len(self.comments)):
             for j in range(0,10):
                 if int(list_ordenado[j]) == int(self.comments[i]):
-                #if data.ted_talks['comments'][i] == 6404:
-                    print  j+1 , "º mais comentado: " , self.name[i], "Ocupação: " , self.speaker_occupation[i] , " e ", self.comments[i], " comentarios e a descrição é: " , self.description[i]
-
-
-    def IdentificarInfos(self):
-        for i in range(0,len(self.name)):
-           if self.name[i] == "Try something new for 30 days" :
-               print self.languages[i]
-               print views[i]
-               print tags[i]
+                    print  j+1 , "º mais comentado: " , self.name[i], "Ocupação: " , self.speaker_occupation[i] , " e ", self.comments[i], " comentarios e os trabalhos relacionados são: " , self.related_talks[i]
 
     def Tempo(self):
-        #data = ReadFile(filename)
         for i in range(0,len(self.published_date)):
             print time.ctime(int(self.published_date[i]))

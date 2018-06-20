@@ -6,12 +6,12 @@ from tedtalks import *
 
 def main(filename):
     ted_talks = TedTalks(filename)
-    ted_talks.Tempo()
-    ted_talks.ordenarLanguages()
-    ted_talks.IdentificarInfos()
-    ted_talks.ordenarVizualizacoes()
+    #ted_talks.Tempo()
+    #ted_talks.ordenarLanguages()
+    #ted_talks.IdentificarInfos()
+    #ted_talks.ordenarVizualizacoes()
     ted_talks.ordenarComentarios()
-    ted_talks.ordenarVisualizacoes()
+    #ted_talks.ordenarVisualizacoes()
 
 if __name__ == "__main__":
     global data
