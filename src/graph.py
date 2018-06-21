@@ -2,7 +2,6 @@ from igraph import *
 
 grafo = Graph()
 grafo = grafo.Read_Ncol("saida.txt", names = True, directed = True, weights = False)
-
-#plot(grafo, bbox = (0,0,2500,2500))
+name = grafo.vs['name']
 graph1 = grafo.community_infomap()
-plot(graph1, bbox = (0,0,700,700), mark_groups = True)
+plot(graph1, bbox = (800,800),mark_groups = True,vertex_label = name)
