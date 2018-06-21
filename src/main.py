@@ -11,9 +11,10 @@ def main(filename):
     #ted_talks.IdentificarInfos()
     #ted_talks.ordenarVizualizacoes()
     #ted_talks.ordenarComentarios()
-    #ted_talks.ordenarVisualizacoes()
-    ted_talks.descobreId()
-    
+    #ted_talks.descobreId()
+    ted_talks.Grafo_Top10Comentarios()
+    #ted_talks.Grafo_Top10Vistos()
+    #ted_talks.Grafo_Top10Linguagens()
 
 if __name__ == "__main__":
     global data

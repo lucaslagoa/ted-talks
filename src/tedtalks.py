@@ -68,5 +68,38 @@ class TedTalks():
                 saida.write(str(i)+ " " + str(self.related_talks[i][j]['id']))
                 saida.write("\n")
 
+    def Grafo_Top10Comentarios(self):
+        list_value = []
+        list_ordenado = list(reversed(sorted(self.comments)))
+        for i in range(0,len(self.comments)):
+            for j in range(0,10):
+                if int(list_ordenado[j]) == int(self.comments[i]):
+                    list_value.append(i)                    
+        for i in list_value:
+           for j in range(0,len(self.related_talks[i])):
+                saida.write(str(i)+ " " + str(self.related_talks[i][j]['id']))
+                saida.write("\n")
 
-        
+    def Grafo_Top10Vistos(self):
+        list_value = []
+        list_ordenado = list(reversed(sorted(self.views)))
+        for i in range(0,len(self.views)):
+            for j in range(0,10):
+                if int(list_ordenado[j]) == int(self.views[i]):
+                    list_value.append(i)                    
+        for i in list_value:
+           for j in range(0,len(self.related_talks[i])):
+                saida.write(str(i)+ " " + str(self.related_talks[i][j]['id']))
+                saida.write("\n")
+
+    def Grafo_Top10Linguagens(self):
+        list_value = []
+        list_ordenado = list(reversed(sorted(self.languages)))
+        for i in range(0,len(self.languages)):
+            for j in range(0,10):
+                if int(list_ordenado[j]) == int(self.languages[i]):
+                    list_value.append(i)                    
+        for i in list_value:
+           for j in range(0,len(self.related_talks[i])):
+                saida.write(str(i)+ " " + str(self.related_talks[i][j]['id']))
+                saida.write("\n")
