@@ -5,7 +5,8 @@ import datetime
 import time
 from igraph import *
 
-saida = open("saida.txt",'w')
+saida = open("saidaGraph.txt",'w')
+saida1 = open("saidaTexto.txt",'w')
 
 class TedTalks():
     def __init__(self, filename):
@@ -42,7 +43,8 @@ class TedTalks():
         for i in range(0,len(parametro)):
             for j in range(0,tamanho):
                 if int(list_ordenado[j]) == int(parametro[i]):
-                    print  j+1 , "Nome: " , self.name[i], " e foi traduzido para: " , self.languages[i], " línguas."
+                   saida1.write( str(j+1) + " " + "Nome: " + str(self.name[i]) + " " + " Parâmetro: " + str(parametro[i]) + " " +  "Descrição da palestra: " + str(self.description[i]) + " " + "Tags: " + str(self.tags[i]) + " " + "Data de publicação: " + str(time.ctime(int(self.published_date[i])))  + " " +  "Ocupação do palestrante: " + str(self.speaker_occupation[i]) + " " )
+                   saida1.write("\n")
 
     def Tempo(self):
         for i in range(0,len(self.published_date)):
