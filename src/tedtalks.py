@@ -43,27 +43,33 @@ class TedTalks():
         for i in range(0,len(parametro)):
             for j in range(0,tamanho):
                 if int(list_ordenado[j]) == int(parametro[i]):
-                   saida1.write( str(j+1) + " " + "Nome: " + str(self.name[i]) + " " + " Parâmetro: " + str(parametro[i]) + " " +  "Descrição da palestra: " + str(self.description[i]) + " " + "Tags: " + str(self.tags[i]) + " " + "Data de publicação: " + str(time.ctime(int(self.published_date[i])))  + " " +  "Ocupação do palestrante: " + str(self.speaker_occupation[i]) + " " )
+                   saida1.write( str(j+1) + " "  + "Id: " + str(i) + " "  + "Nome: " + str(self.name[i]) + " " + " Parâmetro: " + str(parametro[i]) + " " +  "Descrição da palestra: " + str(self.description[i]) + " " + "Tags: " + str(self.tags[i]) + " " + "Data de publicação: " + str(time.ctime(int(self.published_date[i])))  + " " +  "Ocupação do palestrante: " + str(self.speaker_occupation[i]) + " " )
                    saida1.write("\n")
 
+    def imprimeInfos (self,palestra_id):
+        print "Id: " + str(palestra_id) + " "  + "Nome: " + str(self.name[palestra_id]) +  " " +  "Descrição da palestra: " + str(self.description[palestra_id]) + " " + "Tags: " + str(self.tags[palestra_id]) + " " + "Data de publicação: " + str(time.ctime(int(self.published_date[palestra_id])))  + " " +  "Ocupação do palestrante: " + str(self.speaker_occupation[palestra_id])
+
+        
     def Tempo(self):
         for i in range(0,len(self.published_date)):
             print time.ctime(int(self.published_date[i]))
-
-    def descobreId(self): #grafo total
-        for i in range(0,len(self.related_talks)):
-            for j in range(0,len(self.related_talks[i])):
-                saida.write(str(i)+ " " + str(self.related_talks[i][j]['id']))
-                saida.write("\n")
-
-    def Grafo_Top(self,parametro,tamanho):
+    
+    def GrafoTop(self,parametro,tamanho):
         list_value = []
         list_ordenado = list(reversed(sorted(parametro)))
+
         for i in range(0,len(parametro)):
             for j in range(0,tamanho):
                 if int(list_ordenado[j]) == int(parametro[i]):
-                    list_value.append(i)                    
+                    list_value.append(i) 
+
         for i in list_value:
-           for j in range(0,len(self.related_talks[i])):
-                saida.write(str(i)+ " " + str(self.related_talks[i][j]['id']))
-                saida.write("\n")
+            for j in range(0, len(self.related_talks[i])):
+                for k in range(0,len(self.title)) :
+                    if self.related_talks[i][j]['title'] == self.title[k]:
+                        saida.write(str(i) + " " + str(k))
+                        saida.write("\n")
+                        #print self.title[i], self.related_talks[i][j]['title']
+
+
+                        
