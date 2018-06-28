@@ -6,18 +6,13 @@ from tedtalks import *
 
 def main(filename):
     ted_talks = TedTalks(filename)
-    ted_talks.ordenar(ted_talks.comments,10)
-    ted_talks.Grafo_Top(ted_talks.comments,10)
-    #ted_talks.Grafo_Top(ted_talks.comments,10)
-    #ted_talks.Grafo_Top(ted_talks.languages,10)
-    #print ted_talks.tags
+    ted_talks.GrafoTop(ted_talks.languages,10)
 
 if __name__ == "__main__":
     global data
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", type=str, default='../dataset/ted_talks.csv',
-                        help="Nome do arquivo.")
+                        help="Nome do arquivo.")       
     args = parser.parse_args()
     filename = args.f
-
     main(filename)
