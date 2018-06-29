@@ -49,19 +49,42 @@ class TedTalks():
     def imprimeInfos (self,palestra_id):
         print "Id: " + str(palestra_id) + " "  + "Nome: " + str(self.name[palestra_id]) +  " " +  "Descrição da palestra: " + str(self.description[palestra_id]) + " " + "Tags: " + str(self.tags[palestra_id]) + " " + "Data de publicação: " + str(time.ctime(int(self.published_date[palestra_id])))  + " " +  "Ocupação do palestrante: " + str(self.speaker_occupation[palestra_id])
 
-        
+
     def Tempo(self):
         for i in range(0,len(self.published_date)):
             print time.ctime(int(self.published_date[i]))
-    
+
+    def getTag(self, tag):
+        tags = {"title": self.title,
+                "related_talks": self.related_talks,
+                "tags": self.tags,
+                "ratings": self.ratings,
+                "url": self.url,
+                "duration": self.duration,
+                "main_speaker": self.main_speaker,
+                "views": self.views,
+                "comments": self.comments,
+                "description": self.description,
+                "event": self.event,
+                "languages": self.languages,
+                "speaker_occupation": self.speaker_occupation,
+                "event": self.event,
+                "film_date": self.film_date,
+                "name": self.name,
+                "published_date": self.published_date,
+                "tags": self.tags}
+        return tags[tag]
+
     def GrafoTop(self,parametro,tamanho):
         list_value = []
         list_ordenado = list(reversed(sorted(parametro)))
 
+        print list_ordenado
+
         for i in range(0,len(parametro)):
             for j in range(0,tamanho):
                 if int(list_ordenado[j]) == int(parametro[i]):
-                    list_value.append(i) 
+                    list_value.append(i)
 
         for i in list_value:
             for j in range(0, len(self.related_talks[i])):
@@ -70,6 +93,3 @@ class TedTalks():
                         saida.write(str(i) + " " + str(k))
                         saida.write("\n")
                         #print self.title[i], self.related_talks[i][j]['title']
-
-
-                        
