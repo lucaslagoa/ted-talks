@@ -15,8 +15,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", type=str, default='../dataset/ted_talks.csv',
                         help="Nome do arquivo de entrada.")
-    parser.add_argument("-t", nargs='*', default=["comments"],
-                        help="Tags a serem analisadas, separadas por espaço. Ex.: \"languages views\"")
+    parser.add_argument("-t", nargs='*', default=["languages"],
+                        help="Tags a serem analisadas, separadas por espaço. Ex.: \"languages views comments\"")
     parser.add_argument("-n", type=int, default=10,
                         help="Tamanho do resultado.")
 

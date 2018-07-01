@@ -6,7 +6,7 @@ How to use
 .. code-block:: shell
 
    $ cd src
-   $ python main.py
+   $ python main.py -t "parameter" -n "length" 
    
 Authors
 *******
