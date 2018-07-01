@@ -79,8 +79,6 @@ class TedTalks():
         list_value = []
         list_ordenado = list(reversed(sorted(parametro)))
 
-        print list_ordenado
-
         for i in range(0,len(parametro)):
             for j in range(0,tamanho):
                 if int(list_ordenado[j]) == int(parametro[i]):
